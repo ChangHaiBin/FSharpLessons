@@ -34,7 +34,7 @@ let inline (==) x y = (x = y)
 
 /////////////////////////////////////////////////////////////////////
 // Equality testing.
-let x = 20
+let x = 15 + 5
 
 if x == 20 then
     printfn "Yes, the value is Twenty"
@@ -58,9 +58,11 @@ else
 // Using mutable value is a bad idea!
 let mutable x = 100
 printfn "Original value is: %i" x
+// Output: "Original value is: 100"
 
 x <- 200
 printfn "Updated value is: %i" x
+// Output: "Original value is: 200"
 
 ////////////////////////////
 // #########################
@@ -80,14 +82,26 @@ let sentenceStart = "My school is "
 let schoolName = "National University of Singapore"
 let combinedSentence = sentenceStart + schoolName
 
-/////################################################################
-// Cannot combine two different types using the "+" functions     //#
-// The following codes contain ERROR!                             //#
-                                                                  //#
-let x = 15 + 4.11                                                 //#
-let y = "My age is: " + 21                                        //#
-/////################################################################
+/////###################################################
+// Cannot combine two different types using "+"      //#
+// The following codes contain ERROR!                //#
+                                                     //#
+let x = 15 + 4.11                                    //#
+let y = "My age is: " + 21                           //#
+/////###################################################
 
+
+//////////////////////////////////////////////////////////////////
+// Multiply (*)
+let x = 3 * 4
+let y = 1.5 * 1.7
+
+/////#####################################################
+// Cannot multiply integer with decimal using "*"      //#
+// The following codes contain ERROR!                  //#
+                                                       //#
+let x = 3 * 1.5                                        //#
+/////#####################################################
 
 //////////////////////////////////////////////////////////////////
 // SquareRoot "sqrt" and math exponent (**) only accepts decimals, 
@@ -96,12 +110,12 @@ let x = sqrt 9.0
 let y = 2.0 ** 5.0 
 // 2^5 = 2*2*2*2*2 = 32
 
-//#####################################################################
-// ERROR: sqrt and (power ** ) only accepts double/decimals/float   //#
-let x = 2 ** 5                                                      //#
-let y = sqrt 9                                                      //#
-// ERROR!                                                           //#
-//#####################################################################
+//##############################################################
+// ERROR: sqrt and (power ** ) only accepts decimals/float   //#
+let x = 2 ** 5                                               //#
+let y = sqrt 9                                               //#
+// ERROR!                                                    //#
+//##############################################################
 
 /////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////
@@ -117,22 +131,65 @@ let result2 = f 20
 
 // #########################################################
 // ERROR: The function "f" cannot accept decimal input.  //#
-let errorResult = f (3.0)                                //#
+let result = f (3.0)                                     //#
 // #########################################################
 
+// Practice: 
+
+// Practice Q1:
+// Write a function "f" so that:
+// f 1 = 5
+// f 2 = 6
+// f 3 = 7
+let f x = ......
+
+// Check your answer here:
+let result1 = f 1
+let result2 = f 2
+let result3 = f 3
+
+
+// Practice Q2:
+// Write a function "f" so that:
+// f 3 = 6
+// f 4 = 8
+// f 5 = 10
+let f x = ......
+
+// Check your answer here:
+let result1 = f 3
+let result2 = f 4
+let result3 = f 5
+
+// Practice Q3:
+// Write a function "f" so that:
+// f 1 = 1
+// f 2 = 4
+// f 3 = 9
+// f 4 = 16
+// f 5 = 25
+let f x = ......
+
+// Check your answer here:
+let result1 = f 1
+let result2 = f 2
+let result3 = f 3
+let result4 = f 4
+let result5 = f 5
+
+/////////////////////////////////////////////////////////////////
+
 ////////////////////////////////
-
 // Similarly, this function accepts decimals only.
+let g price = price * 0.8
 
-let f price = price * 0.8
-
-let a = f 399.99
-let b = f a
+let result1 = g 399.99
+let result2 = g result1 
 ////////////////////////////
 
 // #########################################################
 // ERROR: The function "f" cannot accept integer input.  //#
-let errorResult = f 100                                  //#
+let result = g 100                                       //#
 // #########################################################
 
 // In order to use the function on 100, you need to change it to "100.0"
@@ -141,6 +198,37 @@ let result = f 100.0
 // Or you need to convert it using "double" or "float"
 let a = float 100
 let result = f a
+
+/////////////////////////////////////////////////////////////
+// Practice: 
+
+// Practice Q1:
+// Write a function "f" so that:
+// f 2.0 = 3.6
+// f 2.5 = 4.1
+// f 3.0 = 4.6
+let f x = ......
+
+// Check your answer here:
+let result1 = f 2.0
+let result2 = f 2.5
+let result3 = f 3.0
+
+// Practice Q2:
+// Write a function "f" so that:
+// f 1.0 = 1.0
+// f 2.0 = 0.5
+// f 3.0 = 0.333333333
+// f 4.0 = 0.25
+// f 5.0 = 0.2
+let f x = ......
+
+// Check your answer here:
+let result1 = f 1.0
+let result2 = f 2.0
+let result3 = f 3.0
+let result4 = f 4.0
+let result5 = f 5.0
 
 /////////////////////////////
 
@@ -153,8 +241,12 @@ let greeting2 = AddGreeting "Mary"
 
 // ####################################################################
 // ERROR: AddGreeting function does not accept integer/double/etc.  //#
-let greetingError = AddGreeting 123                                 //#
+let greeting3 = AddGreeting 123                                     //#
 // ####################################################################
+
+
+
+
 
 ///////////////////////////
 // Exercise: Write a function that calculates the area of a circle of radius r
