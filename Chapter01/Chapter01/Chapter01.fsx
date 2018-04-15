@@ -221,6 +221,9 @@ let result3 = f 3.0
 // f 3.0 = 0.333333333
 // f 4.0 = 0.25
 // f 5.0 = 0.2
+
+// Hint: To write "x" divide by "y", do: x / y
+// Hint: Just like (+) and (*), you cannot divide an integer by a decimal/float.
 let f x = ......
 
 // Check your answer here:
@@ -230,7 +233,46 @@ let result3 = f 3.0
 let result4 = f 4.0
 let result5 = f 5.0
 
-/////////////////////////////
+// Practice Q3:
+// Write a function "f" so that:
+// f 1.0 = 1.0
+// f 2.0 = 4.0
+// f 3.0 = 27.0
+// f 4.0 = 256.0
+// f 5.0 = 3125.0
+
+// Hint: 5^5 = 5 * 5 * 5 * 5 * 5 = 3125
+// Hint: To write x ^ y, do: x ** y
+let f x = ......
+
+// Check your answer here:
+let result1 = f 1.0
+let result2 = f 2.0
+let result3 = f 3.0
+let result4 = f 4.0
+let result5 = f 5.0
+
+// Practice Q4:
+// Write a function "f" so that:
+// f 1.0 = 2.0
+// f 4.0 = 6.0
+// f 9.0 = 12.0
+// f 16.0 = 20.0
+// f 25.0 = 30.0
+// f 36.0 = 42.0
+
+// Hint: sqrt
+let f x = ......
+
+// Check your answer here:
+let result1 = f 1.0
+let result2 = f 4.0
+let result3 = f 9.0
+let result4 = f 16.0
+let result5 = f 25.0
+let result5 = f 36.0
+
+////////////////////////////////////////////////////////////////////////
 
 // Define a function for string.
 let AddGreeting name =
@@ -243,26 +285,6 @@ let greeting2 = AddGreeting "Mary"
 // ERROR: AddGreeting function does not accept integer/double/etc.  //#
 let greeting3 = AddGreeting 123                                     //#
 // ####################################################################
-
-
-
-
-
-///////////////////////////
-// Exercise: Write a function that calculates the area of a circle of radius r
-let CircleArea r =
-
-     // ... IMPLEMENT HERE ...
-     failwith "ERROR. Function not yet implemented."
-     // Delete the line above and replace with the correct implementation
-     // Hint: Use    "System.Math.PI"
-
-// // Test your function here.
-let circleResult1 = CircleArea 1.0
-printfn "The first circle has area of: %f" circleResult1
-
-let circleResult2 = CircleArea 2.0
-printfn "The first circle has area of: %f" circleResult2
 
 //////////////////////////////////////////////////////////////
 // Function with 2 variables.
@@ -313,8 +335,8 @@ let result = f 5 6 7
 f 1.0 2.0 3.0                                                              //#
 // ###########################################################################
 
-// Custom function to work for double
-let f (x:double) y z = x + y + z
+// Custom function to work for float
+let f (x:float) y z = x + y + z
 
 let result = f 2.1 3.0 4.2
 
