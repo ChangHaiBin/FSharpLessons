@@ -29,20 +29,23 @@ printfn "Name: %s. Age: %i. Height: %f." name age height
 printfn "His height is: %.2f" height
 
 /////////////////////////////////////////////////////////////////////
-// Equality testing.
-let valueToTest = 20
-let isValueEqualToTwenty = (valueToTest = 20)
+// This is included for students who are familiar with C++/Java/Python's syntax
+let inline (==) x y = (x = y)
 
-if isValueEqualToTwenty then
+/////////////////////////////////////////////////////////////////////
+// Equality testing.
+let x = 20
+
+if x == 20 then
     printfn "Yes, the value is Twenty"
 else 
     printfn "No, the value is not Twenty"
 
 //////////////////////////////
 
-let inputUserName = "Jack"
+let userName = "Jack"
 
-if inputUserName = "John" then
+if userName == "John" then
     printfn "Welcome back, John"
 else 
     printfn "Access denied."
@@ -53,30 +56,25 @@ else
 // Warning: Do not use mutable value if possible! 
 // 
 // Using mutable value is a bad idea!
-let mutable changableValue = 100
-printfn "Original value is: %i" changableValue
+let mutable x = 100
+printfn "Original value is: %i" x
 
-changableValue <- 200
-printfn "Updated value is: %i" changableValue
+x <- 200
+printfn "Updated value is: %i" x
 
 ////////////////////////////
 // #########################
 // This contains ERROR!  //#
-let immutableValue = 100 //#
-immutableValue <- 300    //#
+let x = 100              //#
+x <- 300                 //#
 //##########################
 
 ///////////////////////////////////////////////////////////////////
 // Basic operator (+)
 
-let number1 = 40
-let number2 = 55
-let addTwoNumbers = number1 + number2
+let x = 40 + 55
 
-// Remark: "float" and "double" mean the same thing in F#.
-let sqrtTwoApprox = 1.414
-let piApprox = 3.1415926
-let addTwoDecimals = sqrtTwoApprox + piApprox
+let y = 1.414 + 3.1415926
 
 let sentenceStart = "My school is "
 let schoolName = "National University of Singapore"
@@ -86,22 +84,22 @@ let combinedSentence = sentenceStart + schoolName
 // Cannot combine two different types using the "+" functions     //#
 // The following codes contain ERROR!                             //#
                                                                   //#
-let addIntegerWithDecimal = 15 + 4.11                             //#
-let combineStringWithInteger = "My age is: " + 21                 //#
+let x = 15 + 4.11                                                 //#
+let y = "My age is: " + 21                                        //#
 /////################################################################
 
 
 //////////////////////////////////////////////////////////////////
 // SquareRoot "sqrt" and math exponent (**) only accepts decimals, 
 
-let sqrtRootOfNine = sqrt 9.0
-let twoToPowerOfFive = 2.0 ** 5.0 
+let x = sqrt 9.0
+let y = 2.0 ** 5.0 
 // 2^5 = 2*2*2*2*2 = 32
 
 //#####################################################################
 // ERROR: sqrt and (power ** ) only accepts double/decimals/float   //#
-let twoToPowerOfFiveError = 2 ** 5                                  //#
-let sqrtRootOfNineError = sqrt 9                                    //#
+let x = 2 ** 5                                                      //#
+let y = sqrt 9                                                      //#
 // ERROR!                                                           //#
 //#####################################################################
 
@@ -126,25 +124,23 @@ let errorResult = f (3.0)                                //#
 
 // Similarly, this function accepts decimals only.
 
-let DiscountFunc originalPrice = originalPrice * 0.8
+let f price = price * 0.8
 
-let discountedPrice = DiscountFunc 399.99
-printfn "New price: %.2f" discountedPrice
-// The "%.2f" is for 2 decimal points, just formatting purposes when printing result.
-
-let anotherDiscount = DiscountFunc discountedPrice
-printfn "New price: %.2f" anotherDiscount
+let a = f 399.99
+let b = f a
 ////////////////////////////
 
-// ####################################################################
-// ERROR: The function "DiscountFunc" cannot accept integer input.  //#
-let errorResult = DiscountFunc 100                                  //#
-// ####################################################################
+// #########################################################
+// ERROR: The function "f" cannot accept integer input.  //#
+let errorResult = f 100                                  //#
+// #########################################################
 
-// In order to use the function on 100, you need to convert it using "double" or "float"
-let convertedPrice = double 100
-let decimalResult = DiscountFunc convertedPrice
-printfn "New price: %.2f" decimalResult
+// In order to use the function on 100, you need to change it to "100.0"
+let result = f 100.0
+
+// Or you need to convert it using "double" or "float"
+let a = float 100
+let result = f a
 
 /////////////////////////////
 
@@ -185,26 +181,24 @@ let result4 = g 10 2
 
 // ############################################################
 // ERROR: The function "g" cannot accept decimal input.     //#
-let errorResult = g (3.0) 10                                //#
-let errorResult = g 10 (2.0)                                //#
+let result1 = g (3.0) 10                                    //#
+let result2 = g 10 (2.0)                                    //#
 // ERROR!                                                   //#
 // ############################################################
 
 //////////////////////////////////////////////////////////////
 
-let CalculateNewBalance interestRate principal  = 
+let f interestRate principal  = 
     principal * (1.0 + interestRate)
 
-let balance1 = CalculateNewBalance 0.05 100000.00 
-printfn "New Balance: %f" balance1
+let balance1 = f 0.05 100000.00 
 
-let balance2 = CalculateNewBalance 0.03 5000.00 
-printfn "New Balance: %f" balance2
+let balance2 = f 0.03 5000.00 
 
-// ################################################################
-// ERROR: CalculateNewBalance does not accept integer values.   //#
-let balanceError = CalculateNewBalance 0.04 100000              //#
-// ################################################################
+// ################################################
+// ERROR: "f" does not accept integer values.   //#
+let balanceError = f 0.04 100000                //#
+// ################################################
 
 ///////////////////////////////////////////////////////////
 // Function with 3 variables.
@@ -218,21 +212,19 @@ let result6 = h 1 1 1
 
 ///////////////////////////////////////////////////////////
 // Warning: F# may sometimes automatically assume the inputs are integer (if insufficient information)
-let AddThree x y z = x + y + z
+let f x y z = x + y + z
 
-let addThreeResult = AddThree 5 6 7
-printfn "Adding 5 and 6 and 7 gives you: %i" addThreeResult
+let result = f 5 6 7
 
-// ############################################################################
-// ERROR: The F# compiler assumes the Add3 function accepts integer inputs. //#
-Add3 1.0 2.0 3.0                                                            //#
-// ############################################################################
+// ###########################################################################
+// ERROR: The F# compiler assumes the "f" function accepts integer inputs. //#
+f 1.0 2.0 3.0                                                              //#
+// ###########################################################################
 
 // Custom function to work for double
-let AddThreeCustom (x:double) y z = x + y + z
+let f (x:double) y z = x + y + z
 
-let add3CustomResult = AddThreeCustom 2.1 3.0 4.2
-printfn "Adding the decimals give you: %f" add3CustomResult
+let result = f 2.1 3.0 4.2
 
 
 

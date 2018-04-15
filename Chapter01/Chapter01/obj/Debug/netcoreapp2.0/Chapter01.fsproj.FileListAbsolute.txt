@@ -6,3 +6,11 @@ D:\Alternate Desktop\randomcrap\FSharpLessons\Lessons\FSharpLessons\Chapter01\Ch
 D:\Alternate Desktop\randomcrap\FSharpLessons\Lessons\FSharpLessons\Chapter01\Chapter01\Chapter01\obj\Debug\netcoreapp2.0\Chapter01.fsprojResolveAssemblyReference.cache
 D:\Alternate Desktop\randomcrap\FSharpLessons\Lessons\FSharpLessons\Chapter01\Chapter01\Chapter01\obj\Debug\netcoreapp2.0\Chapter01.dll
 D:\Alternate Desktop\randomcrap\FSharpLessons\Lessons\FSharpLessons\Chapter01\Chapter01\Chapter01\obj\Debug\netcoreapp2.0\Chapter01.pdb
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\bin\Debug\netcoreapp2.0\Chapter01.deps.json
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\bin\Debug\netcoreapp2.0\Chapter01.runtimeconfig.json
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\bin\Debug\netcoreapp2.0\Chapter01.runtimeconfig.dev.json
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\bin\Debug\netcoreapp2.0\Chapter01.dll
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\bin\Debug\netcoreapp2.0\Chapter01.pdb
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\obj\Debug\netcoreapp2.0\Chapter01.fsprojResolveAssemblyReference.cache
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\obj\Debug\netcoreapp2.0\Chapter01.dll
+D:\Alternate Desktop\randomcrap\FSharpLessons\FSharpLessons\Chapter01\Chapter01\obj\Debug\netcoreapp2.0\Chapter01.pdb
